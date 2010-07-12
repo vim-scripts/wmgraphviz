@@ -1,0 +1,9 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3147
+
+Vim plugin for Graphviz DOT.
+
+Features:
+- Omnicompletion
+- Compiling and viewing commands
+
+Most recent version available at http://github.com/wannesm/wmgraphviz.vim
