@@ -6,9 +6,11 @@ This plugin provides:
 - Omnicompletion for the attribute names and specific values.
 
 
+|wmgraphviz-requirements|         REQUIREMENTS
 |wmgraphviz-mappings|             MAPPINGS
 |wmgraphviz-commands|             COMMANDS
 |wmgraphviz-omnicompletion|       OMNICOMPLETION
+|wmgraphviz-contact|              CONTACT
 
 
 REQUIREMENTS                                         *wmgraphviz-requirements*
@@ -31,6 +33,14 @@ COMMANDS                                                 *wmgraphviz-commands*
 
 *:GraphvizCompile*
 	Create the graph in the same directory as the current dot-file.
+
+*:GraphvizCompilePDF*
+	Same as |:GraphvizCompile| but ignores the |g:WMGraphviz_output|
+	setting and uses 'pdf' as output setting.
+
+*:GraphvizCompilePS*
+	Same as |:GraphvizCompile| but ignores the |g:WMGraphviz_output|
+	setting and uses 'ps' as output setting.
 
 *:GraphvizView*
 	View the graph in the current dot-file.
