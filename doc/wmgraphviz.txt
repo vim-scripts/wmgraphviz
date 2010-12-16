@@ -2,18 +2,24 @@
 *wmgraphviz*
 
 This plugin provides:
-- Compilation for Graphviz
+- Compilation for Graphviz dot-files.
 - Omnicompletion for the attribute names and specific values.
+- Extensions for working with SnipMate and dot2tex.
 
+==============================================================================
 
 |wmgraphviz-requirements|         REQUIREMENTS
 |wmgraphviz-mappings|             MAPPINGS
 |wmgraphviz-commands|             COMMANDS
 |wmgraphviz-omnicompletion|       OMNICOMPLETION
-|wmgraphviz-snipmate|             SNIPMATE
 |wmgraphviz-settings|             SETTINGS
+
+|wmgraphviz-snipmate|             SNIPMATE
+|wmgraphviz-dot2tex|              DOT2TEX
+
 |wmgraphviz-contact|              CONTACT
 
+==============================================================================
 
 REQUIREMENTS                                         *wmgraphviz-requirements*
 
@@ -25,6 +31,7 @@ Installing instruction for Graphviz are available on
 http://www.graphviz.org/Download.php. Mac users can also install from
 http://www.macports.org.
 
+==============================================================================
 
 MAPPINGS                                                 *wmgraphviz-mappings*
 
@@ -34,6 +41,7 @@ MAPPINGS                                                 *wmgraphviz-mappings*
 <Leader>lv		|:GraphvizView|
 	View the graph in the current dot-file.
 
+==============================================================================
 
 COMMANDS                                                 *wmgraphviz-commands*
 
@@ -51,6 +59,7 @@ COMMANDS                                                 *wmgraphviz-commands*
 *:GraphvizView*
 	View the graph in the current dot-file.
 
+==============================================================================
 
 OMNICOMPLETION                                     *wmgraphviz-omnicompletion*
 
@@ -67,6 +76,30 @@ And, >
 completes to >
 	node[shape=plaintext
 
+==============================================================================
+
+SETTINGS                                                 *wmgraphviz-settings*
+
+*g:WMGraphviz_dot*                                        Default: 'dot'
+
+	Set the path to dot (or neato).
+
+*g:WMGraphviz_output*                                     Default: 'pdf'
+
+	Set the output for dot. For acceptable formats see
+	http://www.graphviz.org/doc/info/output.html.
+
+*g:WMGraphviz_viewer*                         Default: 'open'/'xdg-open'
+
+	Set the viewer application. Default is 'open' on Mac and 'xdg-open'
+	on *NIX. If 'xdg-open' is not found, the plugin will fall back to
+	'acroread' for 'pdf' and 'gv' for 'ps' files.
+
+*g:WMGraphviz_shelloptions*                                Default: ''
+
+	Set the options passed on to dot.
+
+==============================================================================
 
 SNIPMATE                                                 *wmgraphviz-snipmate*
 
@@ -75,31 +108,36 @@ is installed, there are some snippets provided. For example >
 	graph<TAB>
 	digraph<TAB>
 
+==============================================================================
 
-SETTINGS                                                 *wmgraphviz-settings*
+DOT2TEX                                                   *wmgraphviz-dot2tex*
 
-*g:WMGraphviz_dot*                                        Default: 'dot'
+If the dot2tex binary (http://www.fauskes.net/code/dot2tex/) is installed,
+you can use an extra command:
 
-	Set the path to dot (or neato).
+*:GraphvizCompileLaTeX*
+	Compiles the dot-file to a LaTeX-file.
 
-*g:WMGraphviz_output*                                     Default: 'pdf'.
+Available keymapping:
 
-	Set the output for dot. For acceptable formats see
-	http://www.graphviz.org/doc/info/output.html.
+<Leader>lt		|:GraphvizCompileLaTeX|
 
-*g:WMGraphviz_viewer*                        Default: 'open'/'acroread'/'gv'.
+Available settings:
 
-	Set the viewer application. Default is 'open' for 'pdf' on Mac and
-	'acroread' on *NIX. For 'ps' it is 'gv'.
+*g:WMGraphviz_tex2dot*                                     Default: 'dot2tex'
 
-*g:WMGraphviz_shelloptions*                                Default: ''.
+	Path to dot2tex binary.
 
-	Set the options passed on to dot.
+*g:WMGraphviz_tex2dotoptions*                              Default: '-tmath'
 
+	Options for tex2dot.
+
+==============================================================================
 
 CONTACT                                                   *wmgraphviz-contact*
 
 Plugin by Wannes Meert, mailto:wannesm@gmail.com, 2010.
 
+==============================================================================
 
 vim:tw=78:ts=8:sw=8:ft=help:norl:noet:
